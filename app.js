@@ -32,7 +32,8 @@ const reviewsRoutes = require('./routes/reviews');
 const userRoutes = require('./routes/users');
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/place-pal';
 
-mongoose.connect('mongodb://localhost:27017/place-pal')
+mongoose.connect(dbUrl,
+)
 .then(() => {
     console.log("Mongo Connection open");
 })
