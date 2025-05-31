@@ -1,0 +1,53 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center">Add New Place</h1>
+        <div class="col-6 offset-3">
+            <form action="/places" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="places[title]" required>
+                    <div class="invalid-feedback">
+                        Please enter a Valid Title
+                      </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="places[location]" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid title
+                      </div>
+                </div>
+                <div class="mb-3">
+
+                     <div class="mb-3">
+                         <label for="image" class="form-label">Upload Image</label>
+                         <input class="form-control" type="file" id="image" name="image" multiple>
+                    </div>
+  
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">₹</span>
+                        <input type="text" class="form-control" 
+                        name = "places[price]" id="price" placeholder="0.00" aria-label="price" aria-describedby="price-label" required >
+                        <div class="invalid-feedback">
+                            Please enter a price
+                          </div>
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="places[description]"  required></textarea>
+                    <div class="invalid-feedback">
+                        Please enter a valid description
+                      </div>
+                </div>
+                <button class="btn btn-success">Add Place</button>
+            </form>
+        </div>
+    </div>
+    <script src="/js/form_val.js">
+    </script>
