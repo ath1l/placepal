@@ -39,7 +39,13 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><%= spot.location %></li>
                 <li class="list-group-item">Submitted by <%= spot.author.username %></li>
-                <li class="list-group-item">₹<%= spot.price %></li>
+                <li class="list-group-item">
+                    <% if(spot.price === 0) { %>
+                        No Entry Fee
+                    <% } else { %>
+                        Entry Fee: ₹<%= spot.price %>
+                    <% } %>
+                </li>
             </ul>
             <div class="card-body">
                 <% if(currentUser && spot.author.equals(currentUser)){ %>
